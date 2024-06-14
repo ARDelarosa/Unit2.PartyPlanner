@@ -1,4 +1,4 @@
-const COHORT = "2404-FTB-MT-WEB-PT"; // Ensure this is the correct cohort name
+const COHORT = "2404-FTB-MT-WEB-PT";
 const API_URL = `https://fsa-crud-2aa9294fe819.herokuapp.com/api/${COHORT}/events`;
 
 const state = {
@@ -6,6 +6,7 @@ const state = {
 };
 
 const eventList = document.querySelector("#events");
+
 const addEventForm = document.querySelector("#addEvent");
 addEventForm.addEventListener("submit", addEvent);
 
@@ -50,8 +51,8 @@ async function addEvent(event) {
     const formData = new FormData(addEventForm);
     const newEvent = {
         name: formData.get("name"),
-        date: formData.get("date"),
-        time: formData.get("time"),
+        date: "2021-09-30T00:00:00.000Z",
+        
         location: formData.get("location"),
         description: formData.get("description"),
     };
